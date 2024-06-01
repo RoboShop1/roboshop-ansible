@@ -1,0 +1,2 @@
+# Already amazon ecosystem, amazon can allow to access other services, with role concept.
+# Role - Giving permissions to one service to manage other services.
