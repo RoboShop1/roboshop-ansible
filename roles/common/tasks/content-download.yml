@@ -18,7 +18,7 @@
   ansible.builtin.shell: npm install
   args:
     chdir: /app
-  when: app == nodejs
+  when: app is defined
 
 
 
