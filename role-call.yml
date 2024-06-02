@@ -1,5 +1,5 @@
 - name: This Playbook to setup {{ component }}
   hosts: all
-  became: true
+  become: true
   roles:
     - "{{ component }}"
