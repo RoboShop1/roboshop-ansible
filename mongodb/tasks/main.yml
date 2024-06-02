@@ -1,0 +1,16 @@
+- name: Setup the {{ component }} repo file
+  ansible.builtin.copy:
+    src: mongodb.repo
+    dest: /etc/yum.repos.d/mongodb.repo
+
+- name: Install {{ component }}
+  ansible.builtin.yum:
+    name: mongodb-org
+    state: installed
+
+- name: Start & Enable {{ component }} Service
+  ansible.builtin.shell: |
+    systemctl enable mongod 
+    systemctl start mongod 
+
+- name:

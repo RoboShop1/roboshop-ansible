@@ -1,0 +1,15 @@
+- name: nodejs:10 module disable
+  ansible.builtin.shell: dnf module disable nodejs -y
+
+- name: nodejs:18 module enable
+  ansible.builtin.shell: dnf module enable nodejs:18 -y
+
+- name: Install nodejs:18
+  ansible.builtin.yum:
+    name: nodejs
+    state: installed
+
+- name: Adding user
+  ansible.builtin.user:
+    name: roboshop
+    state: present

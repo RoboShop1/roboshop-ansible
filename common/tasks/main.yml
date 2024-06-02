@@ -1,0 +1,13 @@
+- name:  set up prompt
+  ansible.builtin.shell: set-hostname {{ component }}
+
+- name: ansible {{ component }} include app-preq tasks
+  ansible.builtin.include_tasks:
+    file: app-preq.yml
+
+- name: ansible {{ component }} include content-download tasks
+  ansible.builtin.include_tasks:
+    file: content-download.yml
+
+- name: ansible {{ component }} include mongodb-client tasks
+  file: mongodb-client.yml
