@@ -21,7 +21,8 @@
 
 - name: Import content-download role from common
   ansible.builtin.import_role:
-    name: content-download
+    name: common
+    tasks_from: content-download
   vars:
     path: /usr/share/nginx/html
 
