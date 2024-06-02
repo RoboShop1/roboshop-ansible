@@ -13,4 +13,4 @@
 
 - name: ansible {{ component }} include mongodb-client tasks
   ansible.builtin.include_tasks:
-  file: mongodb-client.yml
+    file: mongodb-client.yml
