@@ -14,5 +14,10 @@
     dest: "{{ path }}"
     remote_src: yes
 
+- name: To install nodejs dependencies
+  ansible.builtin.shell: npm install
+  args:
+    chdir: /app
+
 
 
