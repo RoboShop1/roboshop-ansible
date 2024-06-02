@@ -8,6 +8,8 @@
 - name: ansible {{ component }} include content-download tasks
   ansible.builtin.include_tasks:
     file: content-download.yml
+  vars:
+    path: /app
 
 - name: ansible {{ component }} include mongodb-client tasks
   file: mongodb-client.yml

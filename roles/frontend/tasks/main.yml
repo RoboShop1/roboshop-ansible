@@ -8,16 +8,22 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
-- name: Clean Up old {{ component }}
-  ansible.builtin.shell: rm -rf *
-  args:
-    chdir: /usr/share/nginx/html
+#- name: Clean Up old {{ component }}
+#  ansible.builtin.shell: rm -rf *
+#  args:
+#    chdir: /usr/share/nginx/html
+#
+#- name: Download new {{ component }} content
+#  ansible.builtin.unarchive:
+#    src: curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/{{ component }}.zip
+#    dest: /usr/share/nginx/html/
+#    remote_src: yes
 
-- name: Download new {{ component }} content
-  ansible.builtin.unarchive:
-    src: curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/{{ component }}.zip
-    dest: /usr/share/nginx/html/
-    remote_src: yes
+- name: Import content-download role from common
+  ansible.builtin.import_role:
+    name: content-download
+  vars:
+    path: /usr/share/nginx/html
 
 - name: Start {{ component }} service
   ansible.builtin.systemd_service:
