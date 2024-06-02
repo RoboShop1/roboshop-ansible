@@ -1,3 +1,6 @@
+- name:  set up prompt
+  ansible.builtin.shell: set-hostname {{ component }}
+
 - name: To install nginx
   ansible.builtin.yum:
     name: nginx
