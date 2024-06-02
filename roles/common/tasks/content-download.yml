@@ -1,17 +1,17 @@
 - name: Clean Up old {{ component }} content
   ansible.builtin.file:
-    path: {{ path }}
+    path: "{{ path }}"
     state: absent
 
 - name: Lets setup an app directory.
   ansible.builtin.file:
-    path: {{ path }}
+    path: "{{ path }}"
     state: directory
 
 - name: Download the {{ component }} code to created app directory
   ansible.builtin.unarchive:
     src: https://roboshop-artifacts.s3.amazonaws.com/{{ component }}.zip
-    dest: {{ path }}
+    dest: "{{ path }}"
     remote_src: yes
 
 
