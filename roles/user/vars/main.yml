@@ -1,4 +1,4 @@
 MONGODB_SERVER_IP_ADDRESS: mongodb-dev.azcart.online
 REDIS_HOST: redis-dev.azcart.online
 app: nodejs
-schema_load: yes
+#schema_load: yes
