@@ -10,6 +10,7 @@
   ansible.builtin.template:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
+  tags: restarted
 
 #- name: Clean Up old {{ component }}
 #  ansible.builtin.shell: rm -rf *
