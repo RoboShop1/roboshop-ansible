@@ -1,0 +1,20 @@
+- name: Setting prompt for server
+  ansible.builtin.shell: set-hostname redis
+
+- name: Downloading redis rpm repo file
+  ansible.builtin.shell: dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
+
+- name: Enable Redis 6.2 from package streams
+  ansible.builtin.shell: dnf module enable redis:remi-6.2 -y
+
+- name: Install redis
+  ansible.builtin.shell: dnf install redis -y
+
+- name: Update listen address from 127.0.0.1 to 0.0.0.0
+  ansible.builtin.shell: | 
+
+- name: Start & Enable Redis Service
+  ansible.builtin.shell: |
+    systemctl enable redis 
+    systemctl start redis
+
