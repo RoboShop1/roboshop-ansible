@@ -4,6 +4,7 @@
 - name: ansible {{ component }} include app-preq tasks
   ansible.builtin.include_tasks:
     file: app-preq.yml
+  when: app == 'nodejs'
 
 - name: ansible {{ component }} include content-download tasks
   ansible.builtin.include_tasks:
