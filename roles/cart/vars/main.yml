@@ -1,0 +1,3 @@
+REDIS_HOST: redis-dev.azcart.online
+CATALOGUE_HOST: catalogue-dev.azcart.online
+app: nodejs
